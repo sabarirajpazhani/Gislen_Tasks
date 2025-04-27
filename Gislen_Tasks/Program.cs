@@ -212,11 +212,13 @@ namespace Gislen_Tasks
             Console.ResetColor();
 
         }
+
+
         static void Main(String[] args)
         {
             //Program_Five();
             //Program_Seven();
-            Program_One();
+            //Program_One();
             Console.ReadKey();
         }
     }
