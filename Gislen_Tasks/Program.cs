@@ -73,10 +73,121 @@ namespace Gislen_Tasks
             Console.WriteLine(total / n);
 
         }
-
         public static void Program_One()
         {
-            Con
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("------------------ Grovery Bill Calculator ------------------");
+            Console.WriteLine("||     ||    ||     ||    ||     ||     ||    ||     ||    ||");                                                        
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.ResetColor();
+
+            Console.WriteLine("              Choose the Items for purchasing                ");
+            Console.WriteLine("               1. Milk              - Rs.20                  ");
+            Console.WriteLine("               2. Coconut Oil       - Rs.50                  ");
+            Console.WriteLine("               3. Sugar             - Rs.15                  ");
+            Console.WriteLine("               4. Salt              - Rs.20                  ");
+            Console.WriteLine("               5. Rice              - Rs.50                  ");
+            Console.WriteLine("               6. Butter            - Rs.30                  ");
+
+            Console.WriteLine("                    For Billing Press '#'                    ");
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("_____________________________________________________________");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.ResetColor();
+
+            Dictionary<string, int> items = new Dictionary<string, int>()
+            {
+                {"milk", 20},
+                {"coconut oil", 50},
+                {"sugar", 15 },
+                {"salt",20},
+                {"rice", 50},
+                {"butter", 30}
+            };
+
+            int quantity = 0;
+            int total = 0;
+
+            
+
+            Dictionary<string, int> purchasedItems = new Dictionary<string, int>();
+
+            while (true)
+            {
+                string userInput = Console.ReadLine().ToLower();
+                if(userInput == "#")
+                {
+                    break;
+                }
+                switch (userInput)
+                {
+                    case "milk":
+                        quantity += 1;
+                        total += items[userInput];
+                        purchasedItems.Add(userInput, items[userInput]);
+                        break;
+
+                    case "coconut oil":
+                        quantity += 1;
+                        total += items[userInput];
+                        purchasedItems.Add(userInput, items[userInput]);
+                        break;
+
+                    case "sugar":
+                        quantity += 1;
+                        total += items[userInput];
+                        purchasedItems.Add(userInput, items[userInput]);
+                        break;
+
+                    case "salt":
+                        quantity += 1;
+                        total += items[userInput];
+                        purchasedItems.Add(userInput, items[userInput]);
+                        break;
+
+                    case "rice":
+                        quantity += 1;
+                        total += items[userInput];
+                        purchasedItems.Add(userInput, items[userInput]);
+                        break;
+
+                    case "butter":
+                        quantity += 1;
+                        total += items[userInput];
+                        purchasedItems.Add(userInput, items[userInput]);
+                        break;
+
+                    default:
+                        Console.WriteLine("Items Not Found");
+                        break;
+                }
+            }
+
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("_____________________________________________________________");
+            Console.WriteLine("-------------------------------------------------------------");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Your Purchased Items: ");
+            Console.ResetColor();
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            foreach (KeyValuePair<string,int> i in purchasedItems)
+            {
+                Console.WriteLine(i.Key +" - "+i.Value);
+            }
+            Console.ResetColor();
+
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("-------------------- Total Quantity - " + quantity +" ---------------------");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("------------------- Total Amount - " + total +" -----------------------");
+            Console.ResetColor();
+
         }
         static void Main(String[] args)
         {
