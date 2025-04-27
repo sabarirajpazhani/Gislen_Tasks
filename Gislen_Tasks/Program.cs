@@ -112,6 +112,10 @@ namespace Gislen_Tasks
             
 
             Dictionary<string, int> purchasedItems = new Dictionary<string, int>();
+            
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Enter the Items for  Purchasing");
+            Console.ResetColor();
 
             while (true)
             {
@@ -123,39 +127,57 @@ namespace Gislen_Tasks
                 switch (userInput)
                 {
                     case "milk":
+                        Console.Write($"Enter the {userInput} Quantity: ");
+                        int quantity1 = Convert.ToInt32(Console.ReadLine()); 
                         quantity += 1;
-                        total += items[userInput];
-                        purchasedItems.Add(userInput, items[userInput]);
+                        int price1 = items[userInput] * quantity1;
+                        total += price1;
+                        purchasedItems.Add(userInput, price1);
                         break;
 
                     case "coconut oil":
+                        Console.Write($"Enter the {userInput} Quantity: ");
+                        int quantity2 = Convert.ToInt32(Console.ReadLine());
                         quantity += 1;
-                        total += items[userInput];
-                        purchasedItems.Add(userInput, items[userInput]);
+                        int price2 = items[userInput] * quantity2;
+                        total += price2;
+                        purchasedItems.Add(userInput, price2);
                         break;
 
                     case "sugar":
+                        Console.Write($"Enter the {userInput} Quantity: ");
+                        int quantity3 = Convert.ToInt32(Console.ReadLine());
                         quantity += 1;
-                        total += items[userInput];
-                        purchasedItems.Add(userInput, items[userInput]);
+                        int price3 = items[userInput] * quantity3;
+                        total += price3;
+                        purchasedItems.Add(userInput, price3);
                         break;
 
                     case "salt":
+                        Console.Write($"Enter the {userInput} Quantity: ");
+                        int quantity4 = Convert.ToInt32(Console.ReadLine());
                         quantity += 1;
-                        total += items[userInput];
-                        purchasedItems.Add(userInput, items[userInput]);
+                        int price4 = items[userInput] * quantity4;
+                        total += price4;
+                        purchasedItems.Add(userInput, price4);
                         break;
 
                     case "rice":
+                        Console.Write($"Enter the {userInput} Quantity: ");
+                        int quantity5 = Convert.ToInt32(Console.ReadLine());
                         quantity += 1;
-                        total += items[userInput];
-                        purchasedItems.Add(userInput, items[userInput]);
+                        int price5 = items[userInput] * quantity5;
+                        total += price5;
+                        purchasedItems.Add(userInput, price5);
                         break;
 
                     case "butter":
+                        Console.Write($"Enter the {userInput} Quantity: ");
+                        int quantity6 = Convert.ToInt32(Console.ReadLine());
                         quantity += 1;
-                        total += items[userInput];
-                        purchasedItems.Add(userInput, items[userInput]);
+                        int price6 = items[userInput] * quantity6;
+                        total += price6;
+                        purchasedItems.Add(userInput, price6);
                         break;
 
                     default:
@@ -173,10 +195,11 @@ namespace Gislen_Tasks
             Console.WriteLine("Your Purchased Items: ");
             Console.ResetColor();
 
+            Console.WriteLine("\tItems\t\t\t\t\tPrice");
             Console.ForegroundColor = ConsoleColor.Green;
             foreach (KeyValuePair<string,int> i in purchasedItems)
             {
-                Console.WriteLine(i.Key +" - "+i.Value);
+                Console.WriteLine($"\t{i.Key}\t\t\t\t\t{i.Value}");
             }
             Console.ResetColor();
 
